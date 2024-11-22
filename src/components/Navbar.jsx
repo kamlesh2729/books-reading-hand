@@ -1,54 +1,33 @@
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import NavBar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import { Link } from 'react-router-dom';
+
+import Logo from '../assets/website/logo.png'
 
 const Navbar = () => {
     return (
       <>
-        <NavBar fixed="top" expand="lg" className="bg-body-tertiary mb-3 px-5">
-          <Container fluid>
-            <NavBar.Brand href="#">Navbar</NavBar.Brand>
-            <NavBar.Toggle aria-controls="offcanvasNavbar-expand" />
-            <NavBar.Offcanvas
-              id="offcanvasNavbar-expand-expand"
-              aria-labelledby="offcanvasNavbarLabel-expand-expand"
-              placement="end"
-            >
-              <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
-                  <NavDropdown
-                    title="Dropdown"
-                    id="offcanvasNavbarDropdown-expand-expand"
-                  >
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                </Nav>
-                <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-success">Search</Button>
-                </Form>
-              </Offcanvas.Body>
-            </NavBar.Offcanvas>
-          </Container>
-        </NavBar>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+  <div className="container-fluid">
+    <Link className="navbar-brand" to='/'> <img src={Logo} className=' w-25 h-25' alt="readinghandbook- logo" /> Book</Link>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to='/'>Home</Link>
+        </li>
+        <li className="nav-item"> <Link className="nav-link" to='/about'>About</Link> </li>
+        <li className="nav-item"> <Link className="nav-link" to='/#BestBooks'>Best Books</Link></li>
+        <li className="nav-item"> <Link className="nav-link" to='/#NewArrivals'>New Arrrivals</Link></li>
+        <li className="nav-item"> <Link className="nav-link" to='/products'>books</Link></li>
+      </ul>
+      <form className="d-flex" role="search">
+        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <button className="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
       </>
     );
 };
