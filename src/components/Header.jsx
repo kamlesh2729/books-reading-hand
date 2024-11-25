@@ -3,8 +3,8 @@
 const Header = () => {
   return (
       <>
-    <div id="carouselExampleAutoplaying" className="carousel slide bg-body-secondary" data-bs-ride="carousel">
-  <div className="carousel-inner">
+    <div id="carouselExampleAutoplaying" className="carousel slide d-flex align-items-center bg-body-secondary" data-bs-ride="carousel">
+  <div className="carousel-inner d-flex align-items-center">
     <p className="carousel-item active">Grab BestSelling Book&lsquo;s Upto 50% off!
     </p>
     <p className="carousel-item">Flat 10% off(Maximum Discount Rs.50)
